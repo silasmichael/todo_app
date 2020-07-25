@@ -17,7 +17,7 @@ function Todo(props) {
     const classes = useStyles();
     if(props.icon==='personal'){
         var av=<AssignmentIndRoundedIcon/>
-    }else if (props.icon==='work') {
+    }else if (props.icon==='workfire') {
         var av=<WorkIcon/>
     } else {
         var av=<BeachAccessIcon/>
