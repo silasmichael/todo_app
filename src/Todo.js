@@ -1,9 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {List,ListItem,ListItemText,ListItemAvatar,Avatar} from '@material-ui/core';
+import {List,ListItem,ListItemText,ListItemAvatar,Avatar, IconButton} from '@material-ui/core';
 import AssignmentIndRoundedIcon from '@material-ui/icons/AssignmentIndRounded';
 import WorkIcon from '@material-ui/icons/Work';
 import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,6 +32,11 @@ function Todo(props) {
                     </Avatar>
                 </ListItemAvatar>
                 <ListItemText primary={props.task} secondary= {props.when} />
+                <ListItemSecondaryAction>
+                    <IconButton edge="end" aria-label="delete">
+                      <DeleteIcon />
+                    </IconButton>
+                  </ListItemSecondaryAction>
             </ListItem>
         </List>
     )

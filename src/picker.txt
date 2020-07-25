@@ -23,7 +23,7 @@ export default function DateAndTimePickers() {
         id="datetime-local"
         label="Next appointment"
         type="datetime-local"
-        defaultValue="2017-05-24T10:30"
+        defaultValue="2017-05-24 10:30am"
         className={classes.textField}
         InputLabelProps={{
           shrink: true,
