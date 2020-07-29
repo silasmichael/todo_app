@@ -46,7 +46,12 @@ function Main(props) {
       //   var task ={'todo':todo, 'category':category, 'when':deadline}
       //   return task
       // }))})
-      db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot=>{setTodos(snapshot.docs.map(doc=>doc.data()))})
+      db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot=>{setTodos(snapshot.docs.map(doc=>({
+          todo:doc.data().todo, 
+          id:doc.id, 
+          deadline:doc.data().deadline, 
+          category: doc.data().category})))
+        })
     }, []);
   
   
@@ -67,7 +72,7 @@ function Main(props) {
       <div className="App">
         <form>
           <div>
-            <h1 className = "Task">Welcome Back {props.name}</h1>
+            <h1 className = "elcome">Welcome Back {props.name}</h1>
             <FormControl className={classes.formControl}>
               <InputLabel>✅ Write a Todo </InputLabel>
               <Input value = {input} onChange = {event => setInput(event.target.value)}/>
@@ -104,7 +109,7 @@ function Main(props) {
         <ul>
           {
             todos.map(todo => (
-              <Todo icon= {todo.category} task={todo.todo} when={todo.deadline} id={todo.ID}/>
+              <Todo icon= {todo.category} task={todo.todo} when={todo.deadline} id={todo.id}/>
             ))
           }
             {/* <Todo icon= '' task={} when=''/> */}

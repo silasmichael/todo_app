@@ -35,6 +35,14 @@
   font-family: cursive;
   margin: 10px;
 }
+.welcome{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 35px;
+  font-family: cursive;
+  margin: 10px;
+}
 
 @keyframes App-logo-spin {
   from {

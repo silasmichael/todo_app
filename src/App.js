@@ -9,6 +9,7 @@ function App() {
   
   return (
     <div className="App">
+      <Main name = "Michael Silas"/>
     </div>
     
   );

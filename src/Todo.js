@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Todo(props) {
     const classes = useStyles();
-    var id = String(props.id);
     if(props.icon==='personal'){
         var av=<AssignmentIndRoundedIcon/>
     }else if (props.icon==='work') {
@@ -36,7 +35,7 @@ function Todo(props) {
                 {console.log(props.task)}
                 <ListItemText primary={props.task} secondary= {props.when} />
                 <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete" onClick = {event=> {db.collection('todos').doc(id).delete()}}>
+                    <IconButton edge="end" aria-label="delete" onClick = {event=> {db.collection('todos').doc(props.id).delete()}}>
                       <DeleteIcon  />
                     </IconButton>
                   </ListItemSecondaryAction>
