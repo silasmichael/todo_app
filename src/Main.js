@@ -87,6 +87,7 @@ function Main(props) {
               id="datetime-local"
               label="When"
               type="datetime-local"
+              defaultValue={tnow}
               value={tnow}
               className={classes.formControl}
               onChange = {event => setTnow(event.target.value)}
