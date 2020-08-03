@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const [login, setLogin] = useState(true);
-  const [register, setRegister] = useState(true);
+  const [register, setRegister] = useState(false);
   // const [appContext, setAppContext] = useState(<SignIn/>)
   function SignUp(){
     const [fname, setFname] = useState('');
@@ -157,6 +157,7 @@ function App() {
               fullWidth
               variant="contained"
               color="primary"
+              type='submit'
               className={classes.submit}
               onClick={addUser}
             >
