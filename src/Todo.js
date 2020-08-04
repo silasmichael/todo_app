@@ -12,7 +12,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is required for IE 11 support
 import PropTypes from 'prop-types';
 import UpdateIcon from '@material-ui/icons/Update';
-
+import CancelIcon from '@material-ui/icons/Cancel';
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
       },
+      updatebtn:{
+        display:'flex',
+        justifyContent:'space-between'
+      }
 }));
 const Fade = React.forwardRef(function Fade(props, ref) {
     const { in: open, children, onEnter, onExited, ...other } = props;
@@ -153,8 +157,14 @@ function Todo(props) {
                                 shrink: true,
                               }}
                             />
+                            <div className={classes.updatebtn}>
+                            <IconButton edge="end" width='50'  aria-label="delete" onClick = {event=> {setOpen(false)}}>
+                              <CancelIcon  />
+                              </IconButton>
                             <Button variant="contained" disabled = {!input}
                               className={classes.button} startIcon={<UpdateIcon />} onClick={updateTodo}>Update ToDo</Button>
+                            </div>
+                            
                         </div>
                         </Fade>
                     </Modal>
